@@ -1,0 +1,22 @@
+.home,a{
+    background-color:#7a7c98;
+    color:bisque;
+}
+.color{
+    color:#7a7c98
+}
+#img1{
+    border-radius: 50%;
+}
+.landingImg{
+    transition: 3s;
+}
+.landingImg:hover{
+    scale: 1.13;
+    transition: ease-in-out 1s;
+    rotate: 180deg;
+}
+#card:hover{
+    scale: 1.1;
+    transition: ease-in 0s;
+}

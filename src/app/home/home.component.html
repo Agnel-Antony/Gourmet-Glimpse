@@ -1,0 +1,51 @@
+<div class="container  p-4">
+    <div class="home row p-5 rounded shadow">
+        <div class="col-6 p-5">
+            <h1>The Easiest Way To Make Your Favourite Meal.</h1>
+            <p>Discover 100+ recipes in your hand with the best recipe. Help you find the easiest way to cook. </p>
+            <button class="btn btn-outline-light" routerLink="/allRecipes">Explore Recipies</button>
+        </div>
+        <div class="col-6 p-5 text-center">
+            <img class="landingImg" src="https://freepngimg.com/thumb/pizza/21-pizza-png-image.png" width="70%" alt="">
+        </div>
+    </div>
+    <div class="row mt-5">
+        <h1 class="color"><i>Popular Recipies of the Week</i></h1>
+        <div class="row mt-4">
+            <div class="col-10">
+                <p class="color">Our Most popular recipies of the week</p>
+            </div>
+            <div class="col-2">
+                <button class="btn color">View Recipe  <i class="fa-solid fa-wand-magic-sparkles"></i></button>
+            </div>
+        </div>
+        <div class="row">
+            @for (item of recipeList; track $index){
+                <div class="col-4 mb-3" id="card">
+                    <div class="card  p-5 shadow">
+                        <img id="img1" [src]="item.image" width="100%"  alt="">
+                        <h3 class="color text-center">{{item.name}}</h3>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <h2 class="color text-center">
+            Feedback From Clients
+        </h2>
+        <marquee width="100px" direction="left" height="200px" class="mt-4">
+            <div class="card shadow w-25 p-5">
+                <h5 class="color text-center">Name:Arun</h5>
+                <h5 class="color text-center">Tasty Food</h5>
+            </div>
+        </marquee>
+    </div>
+    
+    <div class="banner container" >
+        <img src="https://st3.depositphotos.com/1558912/15678/i/450/depositphotos_156782582-stock-photo-vegetarian-food-background.jpg" width="100%" alt="">
+            
+    </div>
+    
+
+</div>

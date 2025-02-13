@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row p-5">
+        <div class="col-4">
+            <h3>Filter</h3>
+        </div>
+        <div class="col-4">
+            <h2>All Recipes</h2>
+        </div>
+        <div class="col-4">
+            <input type="text" class="form-control" placeholder="Search your Recipe here!!!">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <button class="btn" (click)="getAllRecipes()"><b>All</b></button><br><br>
+            <p class="d-inline-flex gap-1">
+                <a class="btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  <b>Cuisine Type</b>
+                </a>
+            </p><br>
+            <div class="collapse" id="collapseExample">
+                <div class="row">
+                  @for (item of cuisineType; track $index){
+                    <div class="col">
+                        <button  (click)="filterRecipe('cuisine',item)" class="btn btn-sm">{{item}}</button>
+                    </div>
+                  }
+                </div>
+              </div>
+            <button class="btn" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample"><b>Meal Type</b></button>
+            <div class="collapse" id="collapseExample1">
+                <div class="row">
+                  @for (item of updatedMealArray; track $index){
+                    <div class="col">
+                        <button  (click)="filterRecipe('mealType',item)" class="btn btn-sm">{{item}}</button>
+                    </div>
+                  }
+                </div>
+              </div>
+        </div>
+        <div class="col-9">
+            <div class="row mt-3">
+                @for (item of recipeList; track $index){
+                    <div class="col-3 m-3">
+                        <div class="card">
+                            <img [src]="item.image" width="100%" alt="">
+                            <div class="text-center">
+                                <h5>{{item.name}}</h5>
+                                <h6>{{item.cuisine}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                }
+               
+            </div>
+        </div>
+    </div>
+</div>
