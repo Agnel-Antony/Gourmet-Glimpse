@@ -31,10 +31,10 @@
         <div class="col-6 p-5" >
             <div class="card p-5 shadow"id="color2">
                 <h3>Client Testimony</h3>
-                <form class="p-3">
-                    <input type="text" class="form-control mt-3" placeholder="Name">
-                    <input type="Email" class="form-control mt-3" placeholder="Email">
-                    <textarea  class="form-control mt-3" placeholder="Message"></textarea>
+                <form [formGroup]="testimonyForm" class="p-3">
+                    <input type="text" formControlName="name" class="form-control mt-3" placeholder="Name">
+                    <input type="Email" formControlName="email" class="form-control mt-3" placeholder="Email">
+                    <textarea formControlName="message" class="form-control mt-3" placeholder="Message"></textarea>
                     <p class="text-secondary">By Submitting, you're agreeing to the terms and condition of our website. We may use your details in our site.</p>
                     <button class="btn btn-success">Submit</button>
                 </form>

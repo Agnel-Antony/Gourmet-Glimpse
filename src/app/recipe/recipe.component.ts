@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
+import { DatePipe } from '@angular/common';
+import { SearchPipe } from '../pipes/search.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-recipe',
   standalone: true,
-  imports: [],
+  imports: [DatePipe,SearchPipe,FormsModule],
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.css'
 })
@@ -17,7 +20,11 @@ export class RecipeComponent implements OnInit{
   newMealArray:any=[]//to hold the new meal to single array
   updatedMealArray:any=[]//to hold meal array without duplications
   dummyRecipeList:any=[]
+
   constructor(private api:ApiService){}
+
+  today = new Date()
+  searchKey:string=""//to hold search value from input box
 
   ngOnInit(): void {
     this.getAllRecipes()
