@@ -31,7 +31,7 @@
         <div class="col-6 p-5" >
             <div class="card p-5 shadow"id="color2">
                 <h3>Client Testimony</h3>
-                <form [formGroup]="testimonyForm" class="p-3">
+                <form (ngSubmit)="addTestimony()" [formGroup]="testimonyForm" class="p-3">
                     <input type="text" formControlName="name" class="form-control mt-3" placeholder="Name">
                     <input type="Email" formControlName="email" class="form-control mt-3" placeholder="Email">
                     <textarea formControlName="message" class="form-control mt-3" placeholder="Message"></textarea>
